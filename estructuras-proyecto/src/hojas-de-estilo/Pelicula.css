@@ -1,0 +1,17 @@
+.contenedor-pelicula {
+    text-align: center; /* Centra el contenido del contenedor */
+  }
+  
+  .imagen-pelicula {
+    width: 200px; /* Ancho de la imagen */
+    height: auto; /* Altura ajustada automáticamente */
+    margin-bottom: 10px; /* Espacio inferior entre la imagen y el título */
+  }
+  
+  .contenedor-pelicula h1 {
+    font-family: 'Poppins', sans-serif; /* Fuente Poppins, con alternativa sans-serif */
+    font-size: 18px; /* Tamaño de la fuente */
+    margin: 0; /* Elimina el margen predeterminado del título */
+  }
+
+  
