@@ -1,12 +1,13 @@
-import Navbar from "./Navbar";
+import { Navbar } from './Navbar.js';
 
 
 function SobreNosotros({ sobreNosotros }) {
   return (
-    <div><Navbar />
-    <div></div>
+    // <div><Navbar/>
+    <div>
     <h1>informacion en proceso </h1>
     </div>
+    // </div>
   );
 }
 

@@ -4,7 +4,7 @@ import Slider from "react-slick"; // Importa el componente Slider de react-slick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../hojas-de-estilo/Pelicula.css";
-import Navbar from "./Navbar.js";
+import { Navbar } from './Navbar.js';
 Pelicula.propTypes = {
   peliculas: PropTypes.arrayOf(
     PropTypes.shape({
@@ -55,7 +55,7 @@ function Pelicula({ peliculas }) {
 
   return (
     <div>
-      <div><Navbar /></div>
+      {/* <div><Navbar/></div> */}
       <div style={{ marginTop: '20px' }}></div>
       <Slider {...settings}>
         {peliculas.map((pelicula, index) => (
