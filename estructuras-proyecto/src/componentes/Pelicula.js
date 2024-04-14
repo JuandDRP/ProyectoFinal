@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import Slider from "react-slick"; // Importa el componente Slider de react-slick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import  '../hojas-de-estilo/Pelicula.css';
-
+import "../hojas-de-estilo/Pelicula.css";
+import Navbar from "./Navbar.js";
 Pelicula.propTypes = {
   peliculas: PropTypes.arrayOf(
     PropTypes.shape({
@@ -18,6 +18,9 @@ Pelicula.defaultProps = {
   peliculas: [
     { nombre: "KunfuPanda", genero: 1 },
     { nombre: "ElExorcista", genero: 2 },
+    {nombre: "SoyLeyenda", genero: 3},
+    {nombre: "ToyStory", genero:  1}
+
   ],
 };
 
@@ -49,34 +52,35 @@ function Pelicula({ peliculas }) {
       },
     ],
   };
-  console.log(peliculas[0].nombre)
-  console.log(peliculas[1].nombre)
 
   return (
-    <Slider {...settings}>
-      {peliculas.map((pelicula, index) => (
-        <div key={index} className="contenedor-pelicula">
-          <img
-            className="imagen-pelicula"
-            src={`${process.env.PUBLIC_URL}/imagenes/${pelicula.nombre}.png`}
-            alt={pelicula.nombre}
-          />
-          
-          <p>
-            {pelicula.genero === 0
-              ? "Servidor en mantenimiento"
-              : pelicula.genero === 1
-              ? "Infantil, para toda la familia"
-              : pelicula.genero === 2
-              ? "Terror"
-              : "Otro género"}
-          </p>
-        </div>
-      ))}
-    </Slider>
+    <div>
+      <div><Navbar /></div>
+      <div style={{ marginTop: '20px' }}></div>
+      <Slider {...settings}>
+        {peliculas.map((pelicula, index) => (
+          <div key={index} className="contenedor-pelicula">
+            <img
+              className="imagen-pelicula"
+              src={`${process.env.PUBLIC_URL}/imagenes/${pelicula.nombre}.png`}
+              alt={pelicula.nombre}
+            />
+
+            <p>
+              {
+                pelicula.genero === 0
+                ? "Servidor en mantenimiento"
+                :pelicula.genero === 1? "Infantil, para toda la familia"
+                :pelicula.genero === 2? "Terror"
+                :pelicula.genero ===3? "Accion"
+                :pelicula.genero ===4? "Fantasia"
+                : "Otro género"}
+            </p>
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 }
-
-
 
 export default Pelicula;
