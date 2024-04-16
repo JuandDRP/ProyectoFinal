@@ -1,12 +1,15 @@
+
 .container-items {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 20px;
+	gap: 20px; /*Distancia entre items*/
 }
 
 .item {
 	border-radius: 10px;
+	background-color: #ff0202;
 	color: #000000;
+	margin: 10px  10px; /* Ajusta que tan separados estan los items del Nav y de eso lados */
 }
 
 .item:hover {
