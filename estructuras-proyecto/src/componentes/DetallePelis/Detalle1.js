@@ -3,6 +3,7 @@ import React from 'react';
 import TablaHorarios from './TablaHorarios';
 import Navbar from '../Navbar';
 import '../DetallePelis/../DetallePelis/Detalle.css';
+import MovieDetailTrailer from './MovieDetailTrailer';
 const Detalle1 = () => {
 
   // Encuentra la película correspondiente según el nombre en los parámetros de la URL
@@ -48,6 +49,7 @@ const Detalle1 = () => {
 
 
       <TablaHorarios/>
+      <MovieDetailTrailer/>
     </div>
   );
 };

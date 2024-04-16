@@ -2,6 +2,7 @@ import React from 'react';
 import TablaHorarios from './TablaHorarios';
 import Navbar from '../Navbar';
 import '../DetallePelis/../DetallePelis/Detalle.css';
+import MovieDetailTrailer from './MovieDetailTrailer';
 const Detalle2 = () => {
 
 
@@ -42,6 +43,7 @@ const Detalle2 = () => {
       
       </p>}
       <TablaHorarios/>
+      <MovieDetailTrailer/>
     </div>
     
   );

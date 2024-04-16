@@ -47,6 +47,7 @@ const Detalle4 = () => {
       
       </p>}
       <TablaHorarios/>
+      <MovieDetailTrailer/>
     </div>
   );
 };
