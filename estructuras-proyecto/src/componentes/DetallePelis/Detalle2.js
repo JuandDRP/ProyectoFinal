@@ -1,13 +1,13 @@
 import React from 'react';
 import TablaHorarios from './TablaHorarios';
 import Navbar from '../Navbar';
-
+import '../DetallePelis/../DetallePelis/Detalle.css';
 const Detalle2 = () => {
 
 
 
   return (
-    <div>
+    <div className='detalle-container'>
       <Navbar />
       <h2>El Exorcista</h2>
       <img

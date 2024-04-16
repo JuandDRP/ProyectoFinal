@@ -2,6 +2,7 @@ import React from 'react';
 
 import TablaHorarios from './TablaHorarios';
 import Navbar from '../Navbar';
+import '../DetallePelis/../DetallePelis/Detalle.css';
 const Detalle3 = () => {
 
   // Encuentra la película correspondiente según el nombre en los parámetros de la URL
@@ -11,7 +12,7 @@ const Detalle3 = () => {
 
 
   return (
-    <div>
+    <div className="detalle-container">
       <Navbar />
       <h2>Soy Leyenda</h2>
       <img
