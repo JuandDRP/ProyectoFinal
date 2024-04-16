@@ -15,8 +15,8 @@ const Detalle2 = () => {
         src={`${process.env.PUBLIC_URL}/imagenes/ElExorcista.png`}
         alt={`El Exorcista`}
       />
-      
-      {<p>Sinopsis.Una inocente niña de 12 años sufre un grave trastorno en su comportamiento, pero los médicos son incapaces de diagnosticar las causas. En realidad, está poseída por el demonio y solo un exorcismo puede sanarla.</p>}
+      <MovieDetailTrailer/>
+      {<p><p className='contenedor'>Sinopsis.</p>Una inocente niña de 12 años sufre un grave trastorno en su comportamiento, pero los médicos son incapaces de diagnosticar las causas. En realidad, está poseída por el demonio y solo un exorcismo puede sanarla.</p>}
       {<p></p>}
       {<p className='datos'>
         <p className='contenedor'>
@@ -43,7 +43,7 @@ const Detalle2 = () => {
       
       </p>}
       <TablaHorarios/>
-      <MovieDetailTrailer/>
+      
     </div>
     
   );
