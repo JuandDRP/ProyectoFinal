@@ -1,4 +1,4 @@
-/* Estilos para el componente Detalle1 */
+/* Estilos para el contenedor de detalles */
 .detalle-container {
     max-width: 800px;
     margin: 0 auto;
@@ -22,3 +22,23 @@
     margin-bottom: 20px;
   }
   
+  /* Estilos para el elemento con la clase 'datos' */
+  .datos {
+  background-color: red;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.contenedor {
+  margin-bottom: 10px;
+}
+
+.datos-nombre {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.datos-item {
+  margin-bottom: 10px;
+}

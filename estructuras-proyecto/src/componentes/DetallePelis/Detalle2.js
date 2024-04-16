@@ -17,6 +17,30 @@ const Detalle2 = () => {
       
       {<p>Sinopsis.Una inocente niña de 12 años sufre un grave trastorno en su comportamiento, pero los médicos son incapaces de diagnosticar las causas. En realidad, está poseída por el demonio y solo un exorcismo puede sanarla.</p>}
       {<p></p>}
+      {<p className='datos'>
+        <p className='contenedor'>
+          <p className='datos-nombre'>Fecha de estreno.</p>
+          7/3/2024
+          </p>
+      <p className='contenedor'>
+        <p className='datos-nombre'>Director.</p> 
+        Mike Mitchell
+        </p>
+        <p className='contenedor'>
+          <p className='datos-nombre'>Nacionalidad.</p>
+          United States of America
+          </p>
+      <p className='contenedor'>
+        <p className='datos-nombre'>Calificación.</p>
+        PG13
+        </p>
+      <p className='contenedor'>
+        <p className='datos-nombre'>Duración.</p>
+        94 Minutos
+      </p>
+
+      
+      </p>}
       <TablaHorarios/>
     </div>
     
