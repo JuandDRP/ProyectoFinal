@@ -1,0 +1,38 @@
+
+.tabla-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .tabla-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .horario-cine {
+    border: 1px solid #ccc8;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+  .horario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .horario-body {
+    margin-top: 10px;
+  }
+  
+  .horario-body ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .horario-body ul li {
+    margin-bottom: 5px;
+  }
+  
