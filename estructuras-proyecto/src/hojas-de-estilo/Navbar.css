@@ -14,7 +14,9 @@ nav {
     display: inline;
     margin-right: 20px;
   }
-  
+  .btn{
+    display: inline-block;
+  }
   a {
     color: white;
     text-decoration: none;
@@ -23,6 +25,7 @@ nav {
   a:hover {
     text-decoration: underline;
   }
+
   .nav-container {
     display: flex;
     justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
