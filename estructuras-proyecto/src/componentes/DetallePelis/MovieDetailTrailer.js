@@ -7,8 +7,8 @@ const MovieDetailTrailer = ({ trailerPath }) => {
 
     const toggle = (e) => {
         // Lo hago así ya que tengo un input y para no abusar de los useState.
-        e.target.value = e.target.value == 'off' ? 'on' : 'off';
-        if (e.target.value == 'on') {
+        e.target.value = e.target.value === 'off' ? 'on' : 'off';
+        if (e.target.value === 'on') {
             videoRef.current.src = '';
         } else {
             videoRef.current.src = videoUrl;
