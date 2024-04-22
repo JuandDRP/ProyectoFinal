@@ -17,9 +17,7 @@ nav {
     margin-right: 20px;
     height: 100%; /* Ajusta la altura de los elementos de la lista */
   }
-  .btn{
-    display: inline-block;
-  }
+  
   a {
     color: white;
     text-decoration: none;
@@ -28,7 +26,6 @@ nav {
   a:hover {
     text-decoration: underline;
   }
-
   .nav-container {
     /* display: flex;
     justify-content: space-between; 
