@@ -2,6 +2,7 @@
 nav {
     background-color: #ff0202;
     padding: 30px;
+    display:auto
   }
   
   ul {
@@ -28,7 +29,7 @@ nav {
 
   .nav-container {
     display: flex;
-    justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
+    justify-content: auto; /* Distribuye los elementos a lo largo del contenedor */
     align-items: center; /* Alinea verticalmente los elementos */
   }
   

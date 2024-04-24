@@ -37,19 +37,6 @@ function App() {
         <PaginaPrincipal />
       )}
     </div>
-    // <div>
-    //   {usuario ? <Pelicula/>:<PaginaPrincipal />}
-    // </div>
-    // <div className="App">
-    //   <Router>
-    //     <Routes> {/* Envuelve tus Routes dentro del componente Routes */}
-    //       <Route path="/" element={<PaginaPrincipal />} />
-    //       <Route path="/peliculas"  element={<Pelicula /> } />
-    //       <Route path="/comidas"  element={<Comidas /> } />
-    //       <Route path="/sobre-nosotros"  element={<SobreNosotros /> } />
-    //     </Routes>
-    //   </Router>
-    // </div>
   );
 }
 
