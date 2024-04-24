@@ -14,7 +14,9 @@ const Detalle3 = () => {
 
   return (
     <div className="detalle-container">
-      <Navbar />
+      <div >
+      <Navbar />      
+      </div>
       <h2>Soy Leyenda</h2>
       <img
         src={`${process.env.PUBLIC_URL}/imagenes/SoyLeyenda.png`}

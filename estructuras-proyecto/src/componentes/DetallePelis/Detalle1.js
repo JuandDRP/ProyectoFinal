@@ -13,8 +13,13 @@ const Detalle1 = () => {
 
 
   return (
-    <div className='detalle-container'>
-      <Navbar />
+    <div >
+      <div >
+      <Navbar />      
+      </div>
+      <div className='detalle-container'>
+
+      
       <h2>KunfuPanda</h2>
 
       <img
@@ -50,7 +55,7 @@ const Detalle1 = () => {
 
 
       <TablaHorarios/>
-      
+      </div>
     </div>
   );
 };

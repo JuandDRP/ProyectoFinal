@@ -92,7 +92,7 @@ Pelicula.defaultProps = {
     { nombre: "KunfuPanda", genero: 1 },
     { nombre: "ElExorcista", genero: 2 },
     { nombre: "SoyLeyenda", genero: 3 },
-    { nombre: "ToyStory", genero: 1 },
+    { nombre: "ToyStory", genero: 4 },
   ],
 };
 
