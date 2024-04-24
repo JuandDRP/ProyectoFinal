@@ -9,7 +9,9 @@ const Detalle2 = () => {
 
   return (
     <div className='detalle-container'>
-      <Navbar />
+      <div >
+      <Navbar />      
+      </div>
       <h2>El Exorcista</h2>
       <img
         src={`${process.env.PUBLIC_URL}/imagenes/ElExorcista.png`}
