@@ -16,7 +16,31 @@ function App() {
   return (
     <div className="App">    
      <Router>
-      <Navbar 
+      
+        <Routes> {/* Envuelve tus Routes dentro del componente Routes */}
+          <Route path="/" element={<PaginaPrincipal />} />
+          <Route path="/peliculas"  element={
+            <>
+          <Navbar 
+          allProducts={allProducts}
+          setAllProducts={setAllProducts}
+          total={total}
+          setTotal={setTotal}
+          countProducts={countProducts}
+          setCountProducts={setCountProducts}
+        />
+          <Pelicula 
+          allProducts={allProducts}
+          setAllProducts={setAllProducts}
+          total={total}
+          setTotal={setTotal}
+          countProducts={countProducts}
+          setCountProducts={setCountProducts}  
+          /> </>
+        } />
+          <Route path="/comidas"  element={
+          <>
+          <Navbar 
             allProducts={allProducts}
             setAllProducts={setAllProducts}
             total={total}
@@ -24,18 +48,36 @@ function App() {
             countProducts={countProducts}
             setCountProducts={setCountProducts}
           />
-        <Routes> {/* Envuelve tus Routes dentro del componente Routes */}
-          <Route path="/" element={<PaginaPrincipal />} />
-          <Route path="/peliculas"  element={<Pelicula /> } />
-          <Route path="/comidas"  element={<Comidas
+          <Comidas
           allProducts={allProducts}
           setAllProducts={setAllProducts}
           total={total}
           setTotal={setTotal}
           countProducts={countProducts}
           setCountProducts={setCountProducts}  
-          /> } />
-          <Route path="/sobre-nosotros"  element={<SobreNosotros /> } />
+          /> 
+          </>
+          } />
+          <Route path="/sobre-nosotros"  element={
+          <>
+          <Navbar 
+            allProducts={allProducts}
+            setAllProducts={setAllProducts}
+            total={total}
+            setTotal={setTotal}
+            countProducts={countProducts}
+            setCountProducts={setCountProducts}
+          />
+          <SobreNosotros 
+          allProducts={allProducts}
+          setAllProducts={setAllProducts}
+          total={total}
+          setTotal={setTotal}
+          countProducts={countProducts}
+          setCountProducts={setCountProducts}  
+          /> 
+          </>
+          } />
         </Routes>
       </Router>
     </div>

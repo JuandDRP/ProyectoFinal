@@ -1,9 +1,9 @@
-import { Navbar } from './Navbar.js';
+
 import React from "react";
 import "../hojas-de-estilo/Comidas.css";
 import { data } from '../DataComidas.js';
 // import { Link } from "react-router-dom";
-//
+
 export const Comidas = ({
 	allProducts,
 	setAllProducts,
@@ -30,7 +30,6 @@ export const Comidas = ({
 	};
 
 	return (
-    // <div> <Navbar/>
 		<div className='container-items'>
 			{data.map(product => (
 				<div className='item' key={product.id}>
@@ -52,6 +51,5 @@ export const Comidas = ({
 				</div>
 			))}
 		</div>
-    // </div>
 	);
 };
