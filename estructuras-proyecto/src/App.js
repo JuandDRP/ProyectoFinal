@@ -1,41 +1,110 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
-import './App.css';
-import Pelicula from './componentes/Pelicula.js';
-import { BrowserRouter as Router, Routes, Route, Navigate,useParams } from 'react-router-dom'; // Utilizamos Routes en lugar de Route
-import PaginaPrincipal from './componentes/PaginaPrincipal.js';
-import Comidas from './componentes/Comidas.js';
-import SobreNosotros from './componentes/SobreNosotros.js';
-import Detalle1 from './componentes/DetallePelis/Detalle1.js';
-import Detalle2 from './componentes/DetallePelis/Detalle2.js';
-import Detalle3 from './componentes/DetallePelis/Detalle3.js';
-import Detalle4 from './componentes/DetallePelis/Detalle4.js';
-import appfirebase from './credenciales.js';
-import {getAuth,onAuthStateChanged} from 'firebase/auth';
-const auth=getAuth(appfirebase)
-
+import React from "react";
+import "./App.css";
+import Pelicula from "./componentes/Pelicula.js";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom"; // Utilizamos Routes en lugar de Route
+import PaginaPrincipal from "./componentes/PaginaPrincipal.js";
+import {Comidas} from './componentes/Comidas.js';
+import {Navbar} from './componentes/Navbar.js';
+import SobreNosotros from "./componentes/SobreNosotros.js";
+import appfirebase from "./credenciales.js";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useState } from 'react';
+const auth = getAuth(appfirebase);
 
 function App() {
-  const [usuario,setUsuario]=useState(null)
-  onAuthStateChanged(auth,(usuarioFirebase)=>{
-    if(usuarioFirebase){
-      setUsuario(usuarioFirebase)
+  const [allProducts, setAllProducts] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [countProducts, setCountProducts] = useState(0);
+  const [usuario, setUsuario] = useState(null);
+  onAuthStateChanged(auth, (usuarioFirebase) => {
+    if (usuarioFirebase) {
+      setUsuario(usuarioFirebase);
+    } else {
+      setUsuario(null);
     }
-    else{
-      setUsuario(null)
-    }
-  })
-  
+  });
+
   return (
-    <div>
+    <div className="App">
       {usuario ? (
         <Router>
           <Routes>
-            <Route path="/" element={<Pelicula />} />
-            <Route path="/comidas" element={<Comidas />} />
-            <Route path="/sobre-nosotros" element={<SobreNosotros />} />
+            <Route
+              path="/"
+              element={
+                <>
+                  <Navbar
+                    allProducts={allProducts}
+                    setAllProducts={setAllProducts}
+                    total={total}
+                    setTotal={setTotal}
+                    countProducts={countProducts}
+                    setCountProducts={setCountProducts}
+                  />
+                  <Pelicula
+                    allProducts={allProducts}
+                    setAllProducts={setAllProducts}
+                    total={total}
+                    setTotal={setTotal}
+                    countProducts={countProducts}
+                    setCountProducts={setCountProducts}
+                  />{" "}
+                </>
+              }
+            />
+            <Route
+              path="/comidas"
+              element={
+                <>
+                  <Navbar
+                    allProducts={allProducts}
+                    setAllProducts={setAllProducts}
+                    total={total}
+                    setTotal={setTotal}
+                    countProducts={countProducts}
+                    setCountProducts={setCountProducts}
+                  />
+                  <Comidas
+                    allProducts={allProducts}
+                    setAllProducts={setAllProducts}
+                    total={total}
+                    setTotal={setTotal}
+                    countProducts={countProducts}
+                    setCountProducts={setCountProducts}
+                  />
+                </>
+              }
+            />
+            <Route
+              path="/sobre-nosotros"
+              element={
+                <>
+                  <Navbar
+                    allProducts={allProducts}
+                    setAllProducts={setAllProducts}
+                    total={total}
+                    setTotal={setTotal}
+                    countProducts={countProducts}
+                    setCountProducts={setCountProducts}
+                  />
+                  <SobreNosotros
+                    allProducts={allProducts}
+                    setAllProducts={setAllProducts}
+                    total={total}
+                    setTotal={setTotal}
+                    countProducts={countProducts}
+                    setCountProducts={setCountProducts}
+                  />
+                </>
+              }
+            />
             <Route path="*" element={<Navigate to="/" />} />
-            <Route path="/:nombre" element={<DetalleComponent />} />
           </Routes>
         </Router>
       ) : (
@@ -44,23 +113,4 @@ function App() {
     </div>
   );
 }
-
-function DetalleComponent() {
-  const { nombre } = useParams();
-
-  if (nombre === 'Detalle1') {
-    return <Detalle1/>;
-  } else if (nombre === 'Detalle2') {
-    return <Detalle2/>;
-  }
-  else if (nombre === 'Detalle3') {
-    return <Detalle3/>;
-  }
-  else if (nombre === 'Detalle4') {
-    return <Detalle4/>;
-  }
-
-  return <div>Película no encontrada</div>;
-}
-
 export default App;
