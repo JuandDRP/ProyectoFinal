@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate,useParams } from 'reac
 import PaginaPrincipal from './componentes/PaginaPrincipal.js';
 import Comidas from './componentes/Comidas.js';
 import SobreNosotros from './componentes/SobreNosotros.js';
+import Reservation from './componentes/Reservartion/Reservation.js';
 import Detalle1 from './componentes/DetallePelis/Detalle1.js';
 import Detalle2 from './componentes/DetallePelis/Detalle2.js';
 import Detalle3 from './componentes/DetallePelis/Detalle3.js';
@@ -36,6 +37,7 @@ function App() {
             <Route path="/sobre-nosotros" element={<SobreNosotros />} />
             <Route path="*" element={<Navigate to="/" />} />
             <Route path="/:nombre" element={<DetalleComponent />} />
+            <Route path="/reservas" element={<Reservation/>} />
           </Routes>
         </Router>
       ) : (
