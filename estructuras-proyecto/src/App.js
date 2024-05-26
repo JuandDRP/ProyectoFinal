@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import './App.css';
 import Pelicula from './componentes/Pelicula.js';
+
 import { BrowserRouter as Router, Routes, Route, Navigate,useParams } from 'react-router-dom'; // Utilizamos Routes en lugar de Route
 import PaginaPrincipal from './componentes/PaginaPrincipal.js';
 import Comidas from './componentes/Comidas.js';
@@ -12,6 +12,7 @@ import Detalle2 from './componentes/DetallePelis/Detalle2.js';
 import Detalle3 from './componentes/DetallePelis/Detalle3.js';
 import Detalle4 from './componentes/DetallePelis/Detalle4.js';
 import appfirebase from './credenciales.js';
+import CargarPeliculas from './componentes/DetallePelis/CargarPelis.js';
 import {getAuth,onAuthStateChanged} from 'firebase/auth';
 const auth=getAuth(appfirebase)
 
@@ -38,6 +39,9 @@ function App() {
             <Route path="*" element={<Navigate to="/" />} />
             <Route path="/:nombre" element={<DetalleComponent />} />
             <Route path="/reservas" element={<Reservation/>} />
+            <Route path="/cargarpelis" element={<CargarPeliculas/>} />
+
+
           </Routes>
         </Router>
       ) : (

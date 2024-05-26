@@ -9,9 +9,12 @@ function Navbar() {
   return (
     <nav>
       <ul>
-        <li><a href="/">Cartelera</a></li>
+      
         <li><a href="/comidas">Comidas</a></li>
         <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
+        <li><a href="/cargarpelis">Cartelera</a></li>
+        
+
         <button className='btn' onClick={()=>signOut(auth)}>Cerrar sesion</button>
       </ul>
     </nav>
