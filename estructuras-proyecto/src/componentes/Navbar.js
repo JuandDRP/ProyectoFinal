@@ -1,6 +1,7 @@
 import React from "react";
 import "../hojas-de-estilo/Navbar.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Navbar = ({
   allProducts,
@@ -30,13 +31,19 @@ export const Navbar = ({
     <nav>
       <ul>
         <li>
-          <a href="/peliculas">Cartelera</a>
+        <Link to="/peliculas" className="nav-inicio">
+              Cartelera
+        </Link>
         </li>
         <li>
-          <a href="/comidas">Comidas</a>
+        <Link to="/comidas" className="nav-inicio">
+              Comidas
+        </Link>
         </li>
         <li>
-          <a href="/sobre-nosotros">Sobre Nosotros</a>
+        <Link to="/sobre-nosotros" className="nav-inicio">
+            Sobre Nosotros
+        </Link>
         </li>
         <li>
           <input type="text" placeholder="Buscar..." />
