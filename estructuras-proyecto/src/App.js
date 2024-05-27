@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import Pelicula from './componentes/Pelicula.js';
 
 import { BrowserRouter as Router, Routes, Route, Navigate,useParams } from 'react-router-dom'; // Utilizamos Routes en lugar de Route
 import PaginaPrincipal from './componentes/PaginaPrincipal.js';
@@ -30,7 +29,7 @@ function App() {
       {usuario ? (
         <Router>
           <Routes>
-            <Route path="/" element={<Pelicula />} />
+            
             <Route path="/comidas" element={<Comidas />} />
             <Route path="/sobre-nosotros" element={<SobreNosotros />} />
             <Route path="*" element={<Navigate to="/" />} />

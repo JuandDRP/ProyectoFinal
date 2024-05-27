@@ -145,10 +145,10 @@ function CargarPeliculas() {
                         onClick={() => setPlaying(true)}
                         type="button"
                       >
-                        Play Trailer
+                         Trailer
                       </button>
                     ) : (
-                      "Sorry, no trailer available"
+                      "Lo siento, trailer no disponible"
                     )}
                     <h1 className="text-white">{selectedMovie.title}</h1>
                     <p className="text-white">{selectedMovie.overview}</p>
@@ -188,22 +188,6 @@ function CargarPeliculas() {
   );
 }
 
-function OtroComponente({ selectedMovieIds }) {
-  useEffect(() => {
-    console.log('Selected Movie IDs:', selectedMovieIds);
-    // Puedes hacer algo con los IDs aquí, como hacer otra petición a la API
-  }, [selectedMovieIds]);
 
-  return (
-    <div>
-      <h3>Películas Seleccionadas</h3>
-      <ul>
-        {selectedMovieIds.map((id) => (
-          <li key={id}>{id}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
 
 export default CargarPeliculas;

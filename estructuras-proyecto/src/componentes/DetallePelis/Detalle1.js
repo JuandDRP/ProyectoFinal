@@ -2,7 +2,7 @@ import React from 'react';
 
 import TablaHorarios from './TablaHorarios';
 import Navbar from '../Navbar';
-import MovieDetailTrailer from './MovieDetailTrailer';
+
 import Board from '../Reservartion/Board';
 const Detalle1 = () => {
 
@@ -26,7 +26,7 @@ const Detalle1 = () => {
         src={`${process.env.PUBLIC_URL}/imagenes/KunfuPanda.png`}
         alt={`Kung Fu Panda`}
       />
-      <MovieDetailTrailer/>
+      
       {<p> Sinopsis. Po se está preparando para convertirse en el Líder Espiritual del Valle de la Paz, por lo que necesita a alguien que ocupe su lugar como Guerrero Dragón. Como tal, entrenará a un nuevo practicante de Kung Fu para el puesto, y se encontrará con un nuevo enemigo llamado "la Camaleona".</p>}
       {<p className='datos'>
         <p className='contenedor'>
