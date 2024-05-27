@@ -1,77 +1,98 @@
-/* Estilos para el contenedor de detalles */
-.detalle-container {
-  max-width: 800px;
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center; /* Centra el contenido dentro del contenedor */
 }
 
-.detalle-container h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+.text-center {
+  text-align: center;
 }
 
-.detalle-container img {
-  display: block;
-  margin: 0 auto; /* Centra la imagen dentro de su contenedor */
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
+.mt-5 {
+  margin-top: 5rem;
 }
 
-.detalle-container p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  text-align: left; /* Alinea el texto a la izquierda */
+.mb-5 {
+  margin-bottom: 5rem;
 }
 
-/* Estilos para el elemento con la clase 'datos' */
-.datos {
-  background-color: red;
-  color: white;
+.mb-4 {
+  margin-bottom: 4rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #0F1014;
+  padding: 1rem;
+}
+
+/* Movie Details */
+.movie-details {
   padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 20px; /* Añade espacio entre el elemento .datos y el siguiente */
 }
 
-.contenedor {
-  margin-bottom: 10px;
+.movie-details h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-.datos-nombre {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.datos-item {
-  margin-bottom: 10px;
-}
-
-/* Estilos para el modal */
-.modal {
-  display: none;
-}
-
-.modal-toggle:checked + .modal {
+.movie-details img {
   display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  border-radius: 10px;
 }
 
-.modal input[type="checkbox"] {
-  display: none;
+.movie-details p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
-.aspect-video {
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%; /* Proporción de 16:9 para el vídeo */
-  position: relative;
+.movie-details .info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.aspect-video iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+.movie-details .info div {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px 0;
+}
+
+.movie-details .info p {
+  margin: 0;
+}
+
+/* Trailer */
+.trailer-container {
+  margin-top: 2rem;
+}
+
+.trailer-container iframe {
+  border: none;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+/* Error message */
+.error-message {
+  color: #ff4d4d;
+  text-align: center;
+  margin-top: 2rem;
 }

@@ -3,21 +3,27 @@ import axios from 'axios';
 import YouTube from 'react-youtube';
 import Navbar from '../Navbar';
 import '../App.css';
+import Detalle from './Detalle';
+import { useNavigate } from 'react-router-dom';
 
-function App() {
+function CargarPeliculas() {
   const API_URL = "https://api.themoviedb.org/3";
   const API_KEY = "fbe0be168c5b7c94765896d073c2497f";
   const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
   const URL_IMAGE = "https://image.tmdb.org/t/p/original";
 
   // Variables de estado
+  const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
   const [searchKey, setSearchKey] = useState("");
   const [selectedMovie, setSelectedMovie] = useState({});
+  const [selectedMovieIds, setSelectedMovieIds] = useState(new Set()); // Estado para almacenar los IDs
   const [trailer, setTrailer] = useState(null);
   const [movie, setMovie] = useState({ title: "Cargando peliculas disponibles" });
   const [playing, setPlaying] = useState(false);
 
+
+  
   // Función para realizar la petición get a la API
   const fetchMovies = async (searchKey = "") => {
     const type = searchKey ? "search/movie" : "movie/now_playing";
@@ -61,7 +67,13 @@ function App() {
     await fetchMovie(movie.id);
     setSelectedMovie(movie);
     setMovie(movie);
+    
+    // Usar un conjunto para evitar duplicados
+    setSelectedMovieIds((prevIds) => new Set(prevIds).add(movie.id));
+    
+    
     window.scrollTo(0, 0);
+    navigate(`/detalle/${movie.id}`);
   };
 
   // Función para buscar películas
@@ -169,8 +181,29 @@ function App() {
           ))}
         </div>
       </div>
+
+      {/* Componente adicional que usa los IDs seleccionados */}
+      <Detalle selectedMovieIds={Array.from(selectedMovieIds)} />
     </div>
   );
 }
 
-export default App;
+function OtroComponente({ selectedMovieIds }) {
+  useEffect(() => {
+    console.log('Selected Movie IDs:', selectedMovieIds);
+    // Puedes hacer algo con los IDs aquí, como hacer otra petición a la API
+  }, [selectedMovieIds]);
+
+  return (
+    <div>
+      <h3>Películas Seleccionadas</h3>
+      <ul>
+        {selectedMovieIds.map((id) => (
+          <li key={id}>{id}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default CargarPeliculas;
