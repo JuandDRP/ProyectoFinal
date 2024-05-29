@@ -1,7 +1,6 @@
-
 import React from "react";
 import "../hojas-de-estilo/Comidas.css";
-import { data } from '../DataComidas';
+import { data } from './../DataComidas';
 // import { Link } from "react-router-dom";
 
 export const Comidas = ({
@@ -10,23 +9,25 @@ export const Comidas = ({
 	countProducts,
 	setCountProducts,
 	total,
-	setTotal}) => {
-		const onAddProduct = product => {
-			if (allProducts.find(item => item.id === product.id)) {
-				const products = allProducts.map(item =>
+	setTotal
+}) => {
+
+	const onAddProduct = (product) => {
+		if (allProducts.find(item => item.id === product.id)) {
+			const updatedProducts = allProducts.map(item =>
 				item.id === product.id
-				? { ...item, quantity: item.quantity + 1 }
-				: item
-				);
-				setTotal(total + product.price * product.quantity);
-				setCountProducts(countProducts + product.quantity);
-				return setAllProducts([...products]);
-			}
-				
-			setTotal(total + product.price * product.quantity);
-			setCountProducts(countProducts + product.quantity);
-			setAllProducts([...allProducts, product]);
-		};
+					? { ...item, quantity: item.quantity + 1 }
+					: item
+			);
+			setAllProducts(updatedProducts);
+		} else {
+			setAllProducts([...allProducts, { ...product, quantity: 1 }]);
+		}
+
+		setTotal(total + product.price);
+		setCountProducts(countProducts + 1);
+	};
+
 	return (
 		<div className='container-items'>
 			{data.map(product => (

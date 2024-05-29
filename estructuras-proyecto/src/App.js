@@ -1,21 +1,20 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import Pelicula from "./componentes/Pelicula.js";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
-} from "react-router-dom"; // Utilizamos Routes en lugar de Route
+} from "react-router-dom";
 import PaginaPrincipal from "./componentes/PaginaPrincipal.js";
-import {Comidas} from './componentes/Comidas.js';
-import {Navbar} from './componentes/Navbar.js';
+import { Comidas } from './componentes/Comidas.js';
+import { Navbar } from './componentes/Navbar.js';
+import CargarPeliculas from "./componentes/DetallesPelis/CargarPelis.js";
 import SobreNosotros from "./componentes/SobreNosotros.js";
 import appfirebase from "./credenciales.js";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useState } from 'react';
-import CargarPeliculas from "./componentes/DetallesPelis/CargarPelis.js";
+import Detalle from "./componentes/DetallesPelis/Detalle.js";
+
 const auth = getAuth(appfirebase);
 
 function App() {
@@ -23,13 +22,17 @@ function App() {
   const [total, setTotal] = useState(0);
   const [countProducts, setCountProducts] = useState(0);
   const [usuario, setUsuario] = useState(null);
-  onAuthStateChanged(auth, (usuarioFirebase) => {
-    if (usuarioFirebase) {
-      setUsuario(usuarioFirebase);
-    } else {
-      setUsuario(null);
-    }
-  });
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (usuarioFirebase) => {
+      if (usuarioFirebase) {
+        setUsuario(usuarioFirebase);
+      } else {
+        setUsuario(null);
+      }
+    });
+    return () => unsubscribe();
+  }, []); // Se suscribe y se cancela la suscripción al cambio de estado del usuario
 
   return (
     <div className="App">
@@ -55,7 +58,7 @@ function App() {
                     setTotal={setTotal}
                     countProducts={countProducts}
                     setCountProducts={setCountProducts}
-                  />{" "}
+                  />
                 </>
               }
             />
@@ -105,6 +108,23 @@ function App() {
                 </>
               }
             />
+            <Route
+              path="/detalle/:id"
+              element={
+                <>
+                  <Navbar
+                    allProducts={allProducts}
+                    setAllProducts={setAllProducts}
+                    total={total}
+                    setTotal={setTotal}
+                    countProducts={countProducts}
+                    setCountProducts={setCountProducts}
+                  />
+                  <Detalle />
+                </>
+              }
+            />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Router>
       ) : (
@@ -113,4 +133,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
