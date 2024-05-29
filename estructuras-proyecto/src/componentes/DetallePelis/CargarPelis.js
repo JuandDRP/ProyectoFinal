@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import YouTube from 'react-youtube';
 import Navbar from '../Navbar';
-import '../../hojas-de-estilo/App.css';
+import './CargarPelis.css';
 import Detalle from './Detalle';
 
 import { useNavigate } from 'react-router-dom';
