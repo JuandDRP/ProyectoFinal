@@ -1,16 +1,21 @@
-import React from "react";
-import "../hojas-de-estilo/Navbar.css";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+// /* eslint-disable no-unused-vars */
+import React, { useState } from 'react';
+import '../hojas-de-estilo/Navbar.css'
+import appfirebase from './../credenciales'
 
-export const Navbar = ({
+import {getAuth,signOut} from 'firebase/auth';
+import { Link } from 'react-router-dom';
+const auth=getAuth(appfirebase);
+
+
+export const Navbar=({
   allProducts,
   setAllProducts,
   total,
   countProducts,
   setCountProducts,
   setTotal,
-}) => {
+})=>{
   const [active, setActive] = useState(false);
 
   const onDeleteProduct = (product) => {
@@ -30,27 +35,13 @@ export const Navbar = ({
   return (
     <nav>
       <ul>
-        <li>
-        <Link to="/peliculas" className="nav-inicio">
-              Cartelera
-        </Link>
-        </li>
-        <li>
-        <Link to="/comidas" className="nav-inicio">
-              Comidas
-        </Link>
-        </li>
-        <li>
-        <Link to="/sobre-nosotros" className="nav-inicio">
-            Sobre Nosotros
-        </Link>
-        </li>
-        <li>
-          <input type="text" placeholder="Buscar..." />
-        </li>
-        <li>
-          <button>Submit</button>
-        </li>
+        <li><Link to="/">Cartelera</Link></li>
+        <li><Link to="/comidas">Comidas</Link></li>
+        <li><Link to="/sobre-nosotros">Sobre Nosotros</Link></li>
+        <li><input type="text" placeholder="Buscar..." /></li>
+        {/* <li><button>Submit</button></li> */}
+        <li><button onClick={()=>signOut(auth)}>Cerrar sesion</button></li>
+        
         <li>
           <div className="container-icon">
             <div
@@ -71,8 +62,6 @@ export const Navbar = ({
                   d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
                 />
               </svg>
-              {/* OTRA OPCION DE SVG */}
-
               <div className="count-products">
                 <span id="contador-productos">{countProducts}</span>
               </div>
@@ -135,5 +124,6 @@ export const Navbar = ({
         </li>
       </ul>
     </nav>
+   
   );
-};
+}
