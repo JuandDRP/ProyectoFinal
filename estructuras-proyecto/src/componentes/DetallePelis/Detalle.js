@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import YouTube from 'react-youtube';
-import Navbar from '../Navbar';
+
+
 import './Detalle.css';
 import TablaHorarios from './TablaHorarios'
 function Detalle() {
@@ -45,7 +46,7 @@ function Detalle() {
 
   return (
     <div className="detalle-container">
-      <Navbar />
+      
       {error ? (
         <p className="error-message">{error}</p>
       ) : pelicula ? (
