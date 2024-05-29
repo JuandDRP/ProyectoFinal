@@ -1,7 +1,8 @@
 .detalle-container {
   padding: 40px;
-  text-align: center; /* Centra el contenido dentro del contenedor */
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1200px; /* Add a maximum width for responsiveness */
 }
 
 .titulo {
@@ -12,6 +13,7 @@
   padding: 10px 20px;
   border-radius: 8px;
   margin-bottom: 20px;
+  width: 100%; /* Make the title container full width */
 }
 
 .detalle-content {
@@ -22,16 +24,21 @@
   margin-bottom: 20px;
 }
 
+.detalle-image {
+  flex-basis: 40%; /* Set the width of the image container */
+  margin-right: 20px; /* Add some margin between image and trailer containers */
+}
+
 .detalle-image img {
-  max-width: 40%; /* Aumenta el tamaño máximo de la imagen */
+  max-width: 100%; /* Make sure the image doesn't exceed the container width */
   height: auto;
   border-radius: 20px;
 }
 
 .detalle-trailer {
-  width: 50%; /* Ajusta el ancho del contenedor del trailer */
+  flex-basis: 50%; /* Set the width of the trailer container */
   position: relative;
-  padding-bottom: 30.25%; /* Proporción 16:9 para el reproductor de YouTube */
+  padding-bottom: 30.25%; /* Proportion 16:9 for the YouTube player */
   overflow: hidden;
   border-radius: 8px;
 }
@@ -47,16 +54,24 @@
 }
 
 .detalle-info {
-  text-align: center; /* Alinear el texto al centro */
+  text-align: left; /* Align the text to the left */
+  width: 100%; /* Make the info container full width */
+  margin-top: 20px; /* Add some margin between trailer and info containers */
 }
 
 .detalle-info p {
-  font-size: 30px;
+  font-size: 20px;
   line-height: 1.6;
   margin-bottom: 10px;
 }
 
 .detalle-info .titulo {
-  font-size: 20px;
+  font-size: 18px;
   color: gray;
+}
+
+.release-date,
+.runtime,
+.rating {
+  margin-bottom: 5px; /* Reduce margin between info elements */
 }

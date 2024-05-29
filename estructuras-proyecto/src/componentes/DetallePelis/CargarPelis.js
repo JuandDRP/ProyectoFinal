@@ -4,6 +4,7 @@ import YouTube from 'react-youtube';
 import Navbar from '../Navbar';
 import '../../hojas-de-estilo/App.css';
 import Detalle from './Detalle';
+
 import { useNavigate } from 'react-router-dom';
 
 function CargarPeliculas() {
@@ -181,11 +182,15 @@ function CargarPeliculas() {
             </div>
           ))}
         </div>
+        
       </div>
+      
 
       {/* Componente adicional que usa los IDs seleccionados */}
       <Detalle selectedMovieIds={Array.from(selectedMovieIds)} />
+      
     </div>
+    
   );
 }
 

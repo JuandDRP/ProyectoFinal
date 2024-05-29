@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import YouTube from 'react-youtube';
 import Navbar from '../Navbar';
 import './Detalle.css';
-
+import TablaHorarios from './TablaHorarios'
 function Detalle() {
   const { id } = useParams();
   const [pelicula, setPelicula] = useState(null);
@@ -69,15 +69,18 @@ function Detalle() {
                 />
               )}
             </div>
+            
           </div>
           <div className="detalle-info">
             <p className="release-date">Fecha de lanzamiento: {pelicula.release_date}</p>
             <p className="runtime">Duración: {pelicula.runtime} minutos</p>
             <p className="rating">Calificación: {pelicula.vote_average}</p>
+            <TablaHorarios/>
           </div>
         </>
       ) : (
         <p className="loading-message">Cargando detalles de la película...</p>
+        
       )}
     </div>
   );

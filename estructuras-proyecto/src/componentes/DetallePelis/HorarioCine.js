@@ -27,7 +27,7 @@ const HorarioCine = ({ lugar, horarios }) => {
           ))}
         </div>
       )}
-      <Board/>
+      
     </div>
   );
 };
