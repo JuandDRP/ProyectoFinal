@@ -2,7 +2,9 @@
 import React, { useState } from 'react';
 import '../hojas-de-estilo/Navbar.css'
 import appfirebase from './../credenciales'
+
 import {getAuth,signOut} from 'firebase/auth';
+import { Link } from 'react-router-dom';
 const auth=getAuth(appfirebase);
 
 
@@ -33,9 +35,9 @@ export const Navbar=({
   return (
     <nav>
       <ul>
-        <li><a href="/">Cartelera</a></li>
-        <li><a href="/comidas">Comidas</a></li>
-        <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
+        <li><Link to="/">Cartelera</Link></li>
+        <li><Link to="/comidas">Comidas</Link></li>
+        <li><Link to="/sobre-nosotros">Sobre Nosotros</Link></li>
         <li><input type="text" placeholder="Buscar..." /></li>
         {/* <li><button>Submit</button></li> */}
         <li><button onClick={()=>signOut(auth)}>Cerrar sesion</button></li>
@@ -124,9 +126,9 @@ export const Navbar=({
     </nav>
     // <nav>
     //   <ul>
-    //     <li><a href="/">Cartelera</a></li>
-    //     <li><a href="/comidas">Comidas</a></li>
-    //     <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
+    //     <li><Link to="/">Cartelera</a></li>
+    //     <li><Link to="/comidas">Comidas</a></li>
+    //     <li><Link to="/sobre-nosotros">Sobre Nosotros</a></li>
     //     <button className='btn' onClick={()=>signOut(auth)}>Cerrar sesion</button>
     //   </ul>
     // </nav>
@@ -165,13 +167,13 @@ export const Navbar=({
 //   return (
 //     <nav>
 //       <ul> <li>
-//           <a href="/peliculas">Cartelera</a>
+//           <Link to="/peliculas">Cartelera</a>
 //         </li>
 //         <li>
-//           <a href="/comidas">Comidas</a>
+//           <Link to="/comidas">Comidas</a>
 //         </li>
 //         <li>
-//           <a href="/sobre-nosotros">Sobre Nosotros</a>
+//           <Link to="/sobre-nosotros">Sobre Nosotros</a>
 //         </li>
 //         <li>
 //           <input type="text" placeholder="Buscar..." />

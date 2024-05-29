@@ -15,6 +15,7 @@ import SobreNosotros from "./componentes/SobreNosotros.js";
 import appfirebase from "./credenciales.js";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useState } from 'react';
+import CargarPeliculas from "./componentes/DetallesPelis/CargarPelis.js";
 const auth = getAuth(appfirebase);
 
 function App() {
@@ -47,7 +48,7 @@ function App() {
                     countProducts={countProducts}
                     setCountProducts={setCountProducts}
                   />
-                  <Pelicula
+                  <CargarPeliculas
                     allProducts={allProducts}
                     setAllProducts={setAllProducts}
                     total={total}
