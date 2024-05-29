@@ -15,6 +15,7 @@ import Detalle from "./componentes/DetallePelis/Detalle";  // Importa el compone
 import appfirebase from "./credenciales.js";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
+import Reservation from "./componentes/Reservartion/Reservation.js";
 const auth = getAuth(appfirebase);
 
 function App() {
@@ -108,6 +109,10 @@ function App() {
                 </>
               }
             />
+            <Route
+              path="/reservas"
+              element={<Reservation/>}
+            ></Route>
             <Route
               path="/detalle/:id"
               element={
