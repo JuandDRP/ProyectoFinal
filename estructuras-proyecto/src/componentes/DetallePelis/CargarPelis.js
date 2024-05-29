@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import YouTube from 'react-youtube';
 import Navbar from '../Navbar';
-import '../App.css';
+import '../../hojas-de-estilo/App.css';
 import Detalle from './Detalle';
 import { useNavigate } from 'react-router-dom';
 
@@ -33,6 +33,7 @@ function CargarPeliculas() {
       params: {
         api_key: API_KEY,
         query: searchKey,
+        language:"es-MX",
       },
     });
     console.log('data', results);
