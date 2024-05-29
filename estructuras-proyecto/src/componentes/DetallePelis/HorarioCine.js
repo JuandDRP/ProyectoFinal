@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Board from '../Reservartion/Board';
+
 const HorarioCine = ({ lugar, horarios }) => {
   const [expanded, setExpanded] = useState(false);
 
