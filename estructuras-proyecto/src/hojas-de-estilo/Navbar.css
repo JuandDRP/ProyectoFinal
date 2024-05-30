@@ -149,6 +149,7 @@ img {
   align-items: center;
   padding: 20px 0;
   gap: 20px;
+  color: #000;
 }
 
 .cart-total h3 {
@@ -160,6 +161,7 @@ img {
 .total-pagar {
   font-size: 20px;
   font-weight: 900;
+  
 }
 
 .hidden-cart {
