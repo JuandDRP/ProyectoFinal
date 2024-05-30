@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import YouTube from 'react-youtube';
 
 import './CargarPelis.css';
 import Detalle from './Detalle';
@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom';
 function CargarPeliculas() {
   const API_URL = "https://api.themoviedb.org/3";
   const API_KEY = "fbe0be168c5b7c94765896d073c2497f";
-  const IMAGE_PATH = "https://image.tmdb.org/t/p/original";
   const URL_IMAGE = "https://image.tmdb.org/t/p/original";
 
   const navigate = useNavigate();
@@ -61,7 +60,7 @@ function CargarPeliculas() {
     await fetchMovie(movie.id);
     setSelectedMovie(movie);
     setSelectedMovieIds((prevIds) => new Set(prevIds).add(movie.id));
-    setPlaying(false); // Asegura que al seleccionar una película, el reproductor se reinicie
+    setPlaying(false);
     navigate(`/detalle/${movie.id}`);
   };
 
@@ -77,10 +76,8 @@ function CargarPeliculas() {
 
   return (
     <div>
-      <h2 className="text-center mt-5 mb-5">Trailer Popular Movies</h2>
-
-      {/* Formulario de búsqueda */}
-      <form className="container mb-4" onSubmit={searchMovies}>
+      <h2 className="text-center mt-5 mb-5 text-4xl">Peliculas Populares</h2>
+      <form className="container mb-4 text-black" onSubmit={searchMovies}>
         <input
           type="text"
           placeholder="search"
@@ -89,60 +86,6 @@ function CargarPeliculas() {
         <button className="btn btn-primary">Search</button>
       </form>
 
-      {/* Contenedor principal */}
-      <div>
-        <main>
-          {selectedMovie ? (
-            <div
-              className="viewtrailer"
-              style={{
-                backgroundImage: `url("${IMAGE_PATH}${selectedMovie.backdrop_path}")`,
-              }}
-            >
-              {playing ? (
-                <YouTube
-                  videoId={trailer ? trailer.key : ""}
-                  className="reproductor container"
-                  containerClassName={"youtube-container amru"}
-                  opts={{
-                    width: "100%",
-                    height: "100%",
-                    playerVars: {
-                      autoplay: 1,
-                      controls: 0,
-                      cc_load_policy: 0,
-                      fs: 0,
-                      iv_load_policy: 0,
-                      modestbranding: 0,
-                      rel: 0,
-                      showinfo: 0,
-                    },
-                  }}
-                />
-              ) : (
-                <div className="container">
-                  <button
-                    className="boton"
-                    onClick={() => setPlaying(true)}
-                    type="button"
-                  >
-                    Watch Trailer
-                  </button>
-                  <h1 className="text-white">{selectedMovie.title}</h1>
-                  <p className="text-white">{selectedMovie.overview}</p>
-                </div>
-              )}
-              {playing && (
-                <button onClick={() => setPlaying(false)} className="boton">
-                  Close
-                </button>
-              )}
-            </div>
-          ) : null}
-        </main>
-      </div>
-
-      {/* Contenedor para mostrar las películas */}
       <div className="container mt-3">
         <div className="row">
           {movies.map((movie) => (
@@ -163,8 +106,6 @@ function CargarPeliculas() {
           ))}
         </div>
       </div>
-
-      {/* Componente adicional para mostrar detalles */}
       <Detalle selectedMovieIds={Array.from(selectedMovieIds)} />
     </div>
   );

@@ -38,7 +38,6 @@ export const Navbar=({
         <li><Link to="/">Cartelera</Link></li>
         <li><Link to="/comidas">Comidas</Link></li>
         <li><Link to="/sobre-nosotros">Sobre Nosotros</Link></li>
-        <li><input type="text" placeholder="Buscar..." /></li>
         <li><button onClick={()=>signOut(auth)}>Cerrar sesion</button></li>
         
         <li>

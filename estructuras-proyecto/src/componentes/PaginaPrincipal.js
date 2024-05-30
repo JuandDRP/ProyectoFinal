@@ -40,28 +40,26 @@ function PaginaPrincipal({ peliculas }) {
           <h1 className="text-5xl mt-5 mb-9 uppercase text-red-700">Login</h1>
           <p className="text-red-700 text-4xl text-left">Email</p>
           <input
-            className="input-email border-black text-4xl mb-4"
+            className="input-email border-black text-black text-4xl mb-4"
             type="email"
-            // value={email}
-            // onChange={handleEmailChange}
+
             required
             id="email"
           />
           <p className="text-red-700 text-4xl text-left">Password</p>
           <input
-            className="input-password border text-4xl mb-4"
+            className="input-password border text-black text-4xl mb-2"
             type="password"
             required
             id="password"
           />
-          <p className="text-blue-600 text-10 text-left">ForgotPassword?</p>
           <div className="botones flex justify-between items my-6">
             <button className="bg-red-700 text-white px-4 py-2 rounded">
               {registrando ? "Registrate" : "Iniciar sesion"}
             </button>
           </div>
         </div>
-        <div className="contenedor-imagen my-6">
+        <div className="contenedor-imagen my-6 flex items-center">
           <img className="w-80 m-auto" src={imagen} alt="Gato del login" />
         </div>
       </form>

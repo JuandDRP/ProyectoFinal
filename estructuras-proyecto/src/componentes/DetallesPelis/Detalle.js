@@ -50,7 +50,7 @@ function Detalle() {
         <>
           <div className="titulo">
             <h3>{pelicula.title}</h3>
-            <p>Sinopsis: {pelicula.overview}</p>
+            <p className="sinopsis-text text-sm">Sinopsis: {pelicula.overview}</p> 
           </div>
           <div className="detalle-content">
             <div className="detalle-image">

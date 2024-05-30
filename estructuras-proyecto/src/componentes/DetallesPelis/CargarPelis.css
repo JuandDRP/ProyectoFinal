@@ -1,4 +1,4 @@
-/* General */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #121212;
@@ -52,13 +52,11 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
   
-  /* Navbar */
   .navbar {
     background-color: #0F1014;
     padding: 1rem;
   }
   
-  /* View trailer */
   .viewtrailer {
     min-height: 700px;
     background-size: cover;
@@ -125,8 +123,7 @@ body {
     width: 100%;
     height: 100%;
   }
-  
-  /* Formulario de búsqueda */
+    /* Formulario de búsqueda */
   form.container {
     display: flex;
     justify-content: center;

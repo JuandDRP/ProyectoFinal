@@ -9,12 +9,13 @@ import {
 import PaginaPrincipal from "./componentes/PaginaPrincipal.js";
 import { Comidas } from './componentes/Comidas.js';
 import { Navbar } from './componentes/Navbar.js';
-import CargarPeliculas from "./componentes/DetallesPelis/CargarPelis.js";
+import CargarPeliculas from './componentes/DetallesPelis/CargarPelis.js';
 import SobreNosotros from "./componentes/SobreNosotros.js";
+import Detalle from "./componentes/DetallesPelis/Detalle.js";  // Importa el componente Detalle
 import appfirebase from "./credenciales.js";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import Detalle from "./componentes/DetallesPelis/Detalle.js";
 
+import Reservation from "./componentes/Reservation/Reservation.js";
 const auth = getAuth(appfirebase);
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
       }
     });
     return () => unsubscribe();
-  }, []); // Se suscribe y se cancela la suscripción al cambio de estado del usuario
+  }, []);
 
   return (
     <div className="App">
@@ -108,6 +109,10 @@ function App() {
                 </>
               }
             />
+            <Route
+              path="/reservas"
+              element={<Reservation/>}
+            ></Route>
             <Route
               path="/detalle/:id"
               element={

@@ -2,7 +2,7 @@
   padding: 40px;
   text-align: center;
   margin: 0 auto;
-  max-width: 1200px; /* Add a maximum width for responsiveness */
+  max-width: 1200px; 
 }
 
 .titulo {
@@ -13,7 +13,7 @@
   padding: 10px 20px;
   border-radius: 8px;
   margin-bottom: 20px;
-  width: 100%; /* Make the title container full width */
+  width: 100%; 
 }
 
 .detalle-content {
@@ -25,20 +25,20 @@
 }
 
 .detalle-image {
-  flex-basis: 40%; /* Set the width of the image container */
-  margin-right: 20px; /* Add some margin between image and trailer containers */
+  flex-basis: 40%; 
+  margin-right: 20px;
 }
 
 .detalle-image img {
-  max-width: 100%; /* Make sure the image doesn't exceed the container width */
+  max-width: 100%; 
   height: auto;
   border-radius: 20px;
 }
 
 .detalle-trailer {
-  flex-basis: 50%; /* Set the width of the trailer container */
+  flex-basis: 50%; 
   position: relative;
-  padding-bottom: 30.25%; /* Proportion 16:9 for the YouTube player */
+  padding-bottom: 30.25%;
   overflow: hidden;
   border-radius: 8px;
 }
@@ -54,9 +54,9 @@
 }
 
 .detalle-info {
-  text-align: left; /* Align the text to the left */
-  width: 100%; /* Make the info container full width */
-  margin-top: 20px; /* Add some margin between trailer and info containers */
+  text-align: left;
+  width: 100%; 
+  margin-top: 20px; 
 }
 
 .detalle-info p {
@@ -73,5 +73,5 @@
 .release-date,
 .runtime,
 .rating {
-  margin-bottom: 5px; /* Reduce margin between info elements */
+  margin-bottom: 5px;
 }

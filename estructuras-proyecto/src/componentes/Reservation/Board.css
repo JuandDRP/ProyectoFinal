@@ -1,7 +1,7 @@
 .seat-map {
     display: flex;
     flex-wrap: wrap;
-    width: 700px; /* Ajusta según sea necesario */
+    width: 700px;
     margin: auto;
     justify-content: center;
     background-color: #333;

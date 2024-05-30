@@ -1,7 +1,6 @@
 import React from "react";
 import "../hojas-de-estilo/Comidas.css";
 import { data } from './../DataComidas';
-// import { Link } from "react-router-dom";
 
 export const Comidas = ({
 	allProducts,
@@ -41,11 +40,6 @@ export const Comidas = ({
 						<button onClick={() => onAddProduct(product)}>
 							Añadir al carrito
 						</button>
-            {/* <button>
-              <Link to="/Descripcion" className="nav-link">
-              Ver mas
-              </Link>
-            </button> */}
 					</div>
 				</div>
 			))}
