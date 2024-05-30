@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Seat from './Silla';
 import './Board.css';
 
@@ -23,6 +24,7 @@ const generateSeats = () => {
 
 const Board = ({ onSeatSelect }) => {
     const [seatMap, setSeatMap] = useState(generateSeats());
+    const navigate = useNavigate();
 
     // Cargar datos de localStorage si existen
     useEffect(() => {
@@ -49,13 +51,20 @@ const Board = ({ onSeatSelect }) => {
         alert('Sillas reservadas con éxito');
     };
 
+    const volver = () => {
+        navigate(-1); // Navega a la URL anterior
+    };
+
     return (
         <div className="seat-map">
             <div className="screen">SCREEN</div>
             {seatMap.map(seat => (
                 <Seat key={seat.id} seat={seat} onSeatClick={handleSeatClick} />
             ))}
-            <button onClick={reservarSillas}>Reservar</button>
+            <div className="buttons">
+                <button onClick={reservarSillas} className="button">Reservar</button>
+                <button onClick={volver} className="button">Volver</button>
+            </div>
         </div>
     );
 };
