@@ -1,0 +1,18 @@
+.seat-map {
+    display: flex;
+    flex-wrap: wrap;
+    width: 700px;
+    margin: auto;
+    justify-content: center;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.screen {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 20px;
+}

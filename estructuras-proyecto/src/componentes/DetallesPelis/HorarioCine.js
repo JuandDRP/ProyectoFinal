@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const HorarioCine = ({ lugar, horarios }) => {
+  const navigate = useNavigate();
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpanded = () => {
     setExpanded(!expanded);
+  };
+  const reservar = () => {
+    navigate('/reservas');
   };
 
   return (
@@ -18,6 +23,7 @@ const HorarioCine = ({ lugar, horarios }) => {
           {horarios.map((horario, index) => (
             <div key={index}>
               <h4>{horario.dia}</h4>
+              <button onClick={reservar} className="reservar-button bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Reservar</button>
               <ul>
                 {horario.horario.map((hora, i) => (
                   <li key={i}>{hora}</li>
@@ -27,6 +33,7 @@ const HorarioCine = ({ lugar, horarios }) => {
           ))}
         </div>
       )}
+      
     </div>
   );
 };
